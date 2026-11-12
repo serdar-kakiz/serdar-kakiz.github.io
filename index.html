@@ -10,13 +10,7 @@
 :root{--plum:#4c6a28;--plum2:#3c5420;--deep:#1d2a0d;--gold:#eed291;--gold2:#a8842f;--cream:#f5f8ee;--card:#ffffff;--ink:#1d2a0d;--muted:#627052;--line:#dfe6cf;
 --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-:root[data-theme="dark"]{--cream:#121a0a;--card:#1c2810;--ink:#eef3e2;--muted:#b2c09c;--line:#33441f;color-scheme:dark}
 body{transition:background .3s,color .3s}
-#tema{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:46px;height:46px;border-radius:50%;border:1px solid var(--gold2);background:var(--plum);color:var(--gold);display:grid;place-items:center;cursor:pointer;padding:0;box-shadow:0 4px 14px rgba(0,0,0,.3)}
-#tema svg{width:22px;height:22px}
-#tema .sun{display:none}
-:root[data-theme="dark"] #tema .sun{display:block}
-:root[data-theme="dark"] #tema .moon{display:none}
 html{scroll-behavior:smooth;scroll-padding-top:90px;height:auto}
 *{box-sizing:border-box}
 body{margin:0;font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6}
@@ -94,43 +88,16 @@ h2{font-family:var(--serif);font-size:34px;margin:4px 0 12px;font-weight:700}
 .q i{color:var(--gold);font-family:var(--serif);font-size:30px;line-height:0;vertical-align:-8px;margin-right:6px;font-style:normal}
 .q p{margin:0 0 8px}
 .q span{font-size:12.5px;color:#eaf2d8}.q em{color:var(--gold);font-style:normal;letter-spacing:2px}
-/* açılış animasyonu */
-#acilis{position:fixed;inset:0;z-index:100;background:var(--plum);display:grid;place-items:center;animation:acilisKapat .7s ease 2.2s forwards}
-.ns #acilis{display:none}
-#acilis .in{text-align:center;color:var(--gold);padding:0 20px}
-#acilis .mono{width:96px;height:96px;font-size:68px;margin:0 auto 20px;animation:belir 1s ease both}
-#acilis b{display:block;font-family:var(--serif);font-size:28px;letter-spacing:.2em;font-weight:600;animation:belir 1s ease .5s both}
-#acilis small{display:block;font-size:10px;letter-spacing:.25em;color:#eaf2d8;text-wrap:balance;margin-top:8px;animation:belir 1s ease 1s both}
-@keyframes belir{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes acilisKapat{to{opacity:0;visibility:hidden}}
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
-.js .rv.go{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){#acilis{display:none}.js .rv{opacity:1;transform:none;transition:none}}
 /* randevu penceresi */
 .rm{position:fixed;inset:0;z-index:200;background:rgba(18,26,10,.6);display:grid;place-items:center;padding:16px;-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
 .rm[hidden]{display:none}
-.rbox{position:relative;width:100%;max-width:440px;background:var(--card);color:var(--ink);border-radius:16px;padding:26px 22px 22px;box-shadow:0 20px 50px rgba(0,0,0,.4);animation:belir .3s ease both}
+.rbox{position:relative;width:100%;max-width:440px;background:var(--card);color:var(--ink);border-radius:16px;padding:26px 22px 22px;box-shadow:0 20px 50px rgba(0,0,0,.4)}
 .rbox h3{font-family:var(--serif);font-size:26px;margin:0 0 6px}
 .rbox p{font-size:14px;color:var(--muted);margin:0 0 14px}
 .rbox textarea{width:100%;min-height:150px;resize:vertical;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:var(--cream);color:var(--ink)}
 .rbox .rx{position:absolute;right:12px;top:10px;border:0;background:none;color:var(--muted);font-size:28px;line-height:1;cursor:pointer;padding:6px 10px}
 #rhata{color:#c0392b;font-size:13px;min-height:20px;margin:4px 0 8px}
 .rbox .btn{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:15px}
-/* mesaj bölümü */
-.ms{padding:44px 24px 54px;max-width:760px}
-.ms>p{color:var(--muted);margin:0 0 6px;font-size:15px}
-.ms .em{display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-top:1px solid var(--line);padding:18px 0;margin:18px 0 22px}
-.ms .em span{font-size:12px;letter-spacing:.2em;color:var(--muted)}
-.ms .em strong{font-size:18px;word-break:break-all}
-.ms .kp{border:1px solid var(--line);background:none;color:var(--ink);border-radius:30px;padding:8px 16px;font:inherit;font-size:14px;cursor:pointer}
-.ms .kart{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:8px}
-.ms label{font-size:12px;letter-spacing:.2em;color:var(--muted);margin-top:8px}
-.ms input,.ms select,.ms textarea{width:100%;font:inherit;font-size:16px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--cream);color:var(--ink)}
-.ms textarea{min-height:130px;resize:vertical}
-.ms .bt{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
-.ms .bt .btn{border:0;cursor:pointer;font:inherit;font-weight:600;font-size:14px}
-.ms .bt .btn.out{border:1px solid var(--gold2);background:transparent;color:var(--ink)}
-#mhata{color:#b3402a;font-size:13px;min-height:18px}
 /* yazar sayfası */
 #page-yazar{display:none}
 body.yazar #page-home{display:none}body.yazar #page-yazar{display:block}
@@ -201,37 +168,7 @@ header #nav{transition:opacity .25s ease,visibility 0s}
 header.gizli.tek{clip-path:inset(0 0 0 0)}
 header.gizli.tek #nav{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility 0s linear .25s}
 @media (prefers-reduced-motion:reduce){header,header #nav{transition:none}}
-/* ana sayfa kitap bölümü */
-.bkhome{background:var(--cream);padding:56px 24px}
-.bkhome .in{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:48px;align-items:center}
-.bkhome .cv{aspect-ratio:3/4;border-radius:10px;overflow:hidden;box-shadow:0 22px 50px rgba(0,0,0,.3);background:var(--plum2)}
-.bkhome .cv img{width:100%;height:100%;display:block;object-fit:cover}
-.bkhome h2{font-family:var(--serif);font-size:40px;line-height:1.1;margin:6px 0 14px}
-.bkhome p{margin:0;max-width:560px}
-@media(max-width:760px){.bkhome .in{grid-template-columns:1fr;gap:26px}.bkhome .cv{max-width:260px;width:100%;margin:0 auto}}
 </style>
-<script>
-(function(){
- var K="tema-tercihi",mem=null;
- function auto(){var h=new Date().getHours();return(h>=7&&h<19)?"light":"dark";}
- function stored(){var v=null;try{v=JSON.parse(localStorage.getItem(K)||"null");}catch(e){}return v||mem;}
- function current(){var a=auto(),s=stored();return(s&&s.a===a&&(s.t==="light"||s.t==="dark"))?s.t:a;}
- function label(){var b=document.getElementById("tema");if(!b)return;var d=document.documentElement.getAttribute("data-theme")==="dark";var t=d?"Aydınlık temaya geç":"Karanlık temaya geç";b.setAttribute("aria-label",t);b.setAttribute("title",t);}
- function apply(){document.documentElement.setAttribute("data-theme",current());label();}
- window.temaDegistir=function(){
-  var n=document.documentElement.getAttribute("data-theme")==="dark"?"light":"dark";
-  mem={t:n,a:auto()};
-  try{localStorage.setItem(K,JSON.stringify(mem));}catch(e){}
-  apply();
- };
- apply();
- setInterval(apply,60000);
- document.addEventListener("DOMContentLoaded",label);
-})();
-</script>
-<script>
-(function(){var d=document.documentElement;d.classList.add("js");try{if(sessionStorage.getItem("acilis")){d.classList.add("ns");}else{sessionStorage.setItem("acilis","1");}}catch(e){}})();
-</script>
 <style>
 /* yeni sayfalar: Duygusal Zeka, Manevi Danışmanlık, Yaşam Koçluğu */
 #page-duygusal,#page-manevi,#page-kocluk{display:none}
@@ -254,58 +191,8 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
 .kay ul{margin:6px 0 0}
 @media(max-width:560px){.sh{gap:14px}.sh .ic{width:56px;height:56px}.sh .ic svg{width:26px;height:26px}.sh h2{font-size:30px}}
 </style>
-<style>
-/* ===== ek hareketler (yalnızca ekleme; mevcut kurallara dokunmaz) ===== */
-@media (prefers-reduced-motion:no-preference){
- /* dokunma geri bildirimi */
- .btn{transition:transform .15s ease,background .2s ease}
- .btn:active{transform:scale(.96)}
- /* sayfa geçişlerinde yumuşak belirme */
- main[id^="page-"]{animation:an-sayfa .5s ease backwards}
- @keyframes an-sayfa{from{opacity:0}}
- /* hero ana buton: altın nabız + ok hareketi */
- .hero .btn{animation:an-nabiz 2.6s ease-in-out 3.2s infinite}
- .hero .btn svg,.abt .btn.out svg{animation:an-ok 1.6s ease-in-out 3.2s infinite}
- @keyframes an-nabiz{0%{box-shadow:0 0 0 0 rgba(238,210,145,.7),0 0 10px 2px rgba(238,210,145,.45)}70%,100%{box-shadow:0 0 0 16px rgba(238,210,145,0),0 0 10px 2px rgba(238,210,145,.2)}}
- @keyframes an-ok{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
- /* üst menü Randevu Al: ışık parıltısı */
- header #nav a.btn{position:relative;overflow:hidden}
- header #nav a.btn::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:an-parilti 4s ease-in-out 3s infinite;pointer-events:none}
- @keyframes an-parilti{0%{left:-60%}35%,100%{left:130%}}
- /* logo halkası: yumuşak nefes */
- header .mono{animation:an-halka 3.4s ease-in-out 3s infinite}
- @keyframes an-halka{0%,100%{box-shadow:0 0 0 0 rgba(238,210,145,0)}50%{box-shadow:0 0 0 4px rgba(238,210,145,.18),0 0 10px rgba(238,210,145,.25)}}
- /* hizmet ikonları: sırayla nefes alma + dokunma büyütmesi */
- .svc .ic{transition:transform .25s ease,background .25s ease,color .25s ease;animation:an-nefes 3.6s ease-in-out infinite}
- .svc a:nth-child(2) .ic{animation-delay:.5s}.svc a:nth-child(3) .ic{animation-delay:1s}
- .svc a:nth-child(4) .ic{animation-delay:1.5s}.svc a:nth-child(5) .ic{animation-delay:2s}.svc a:nth-child(6) .ic{animation-delay:2.5s}
- .svc a:hover .ic,.svc a:active .ic{transform:scale(1.1)}
- @keyframes an-nefes{0%,100%{box-shadow:0 0 0 0 rgba(168,132,47,0)}50%{box-shadow:0 0 0 7px rgba(168,132,47,.16)}}
- /* "Güçlenelim." altın parıltı */
- @supports ((-webkit-background-clip:text) or (background-clip:text)){
-  .hero h1 em{background:linear-gradient(100deg,#eed291 0%,#eed291 40%,#fff6d8 50%,#eed291 60%,#eed291 100%);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:an-isilti 5s ease-in-out 3.2s infinite}
- }
- @keyframes an-isilti{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
- /* "Her aile kendi hikayesini..." yazısı: hafif süzülme (masaüstü) */
- .script{animation:an-yuz 5s ease-in-out infinite}
- @keyframes an-yuz{0%,100%{transform:rotate(-8deg) translateY(0)}50%{transform:rotate(-8deg) translateY(-8px)}}
- /* yorum yıldızları: sırayla parıldama */
- .q em{animation:an-yildiz 3s ease-in-out infinite}
- .q:nth-child(2) em{animation-delay:1s}.q:nth-child(3) em{animation-delay:2s}
- @keyframes an-yildiz{0%,100%{text-shadow:0 0 0 rgba(238,210,145,0);opacity:.85}50%{text-shadow:0 0 10px rgba(238,210,145,.9);opacity:1}}
- /* kitap listesi: sırayla yükselerek gelme */
- .bk{animation:an-gir .6s ease backwards}
- .bk:nth-child(2n){animation-delay:.1s}
- @keyframes an-gir{from{opacity:0;transform:translateY(18px)}}
- /* satın alma / mesaj gönderme butonları: açık zemin için altın nabız */
- #mwa{animation:an-nabiz-a 2.4s ease-in-out 1s infinite}
- @keyframes an-nabiz-a{0%{box-shadow:0 0 0 0 rgba(168,132,47,.55)}70%,100%{box-shadow:0 0 0 14px rgba(168,132,47,0)}}
-}
-</style>
 </head>
 <body>
-<button id="tema" type="button" onclick="temaDegistir()" aria-label="Tema değiştir"><svg class="i moon" viewBox="0 0 24 24"><path d="M21 13.5A8.5 8.5 0 1 1 10.5 3a7 7 0 0 0 10.5 10.5z"/></svg><svg class="i sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
-<div id="acilis" aria-hidden="true"><div class="in"><div class="mono">SK</div><b>SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></div></div>
 <div id="rmodal" class="rm" hidden role="dialog" aria-modal="true" aria-labelledby="rbaslik">
  <div class="rbox">
   <button type="button" class="rx" id="rkapat" aria-label="Kapat">×</button>
@@ -367,17 +254,6 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  <a class="js-randevu" data-on="Online randevu almak istiyorum: " href="https://wa.me/905443913120?text=Merhaba%20siteniz%20%C3%BCzerinden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener"><div class="ic"><svg class="i"><use href="#hrt"/></svg></div><b>Online Randevu</b><span>Size uygun<br>zamanı seçin</span></a>
 </section>
 
-<section class="bkhome" id="kitap">
- <div class="in">
-  <div class="cv"><img id="kitapana" alt="Hayat Yaşadıkça Güzel kitabının kapağı"></div>
-  <div>
-   <div class="lbl">YAZARIN KİTABI</div>
-   <h2>Hayat Yaşadıkça Güzel</h2>
-   <p>“Sessizlikte hakikat konuşur.” Hayat Yaşadıkça Güzel, insanın kendini, hayatı ve hakikati anlama yolculuğunu anlatan derinlikli bir eserdir. Tasavvufun kadim bilgeliğini, modern insanın arayışlarıyla buluşturan kitap; kalbin, ruhun ve insan olmanın sırlarına dair düşündürücü bir rehber niteliği taşır.</p>
-  </div>
- </div>
-</section>
-
 <section class="ab">
  <div class="ph"><div><q>“İyi bir dinleyici olmak, iyi bir danışmanın en güçlü yönüdür.”</q><cite>Serdar Kakız</cite></div></div>
  <div class="abt">
@@ -408,23 +284,6 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
   <div class="q"><p><i>“</i>Sorduğum her soruya sabırla ve profesyonel bir şekilde yanıt verdi. Kesinlikle tavsiye ediyorum.”</p><span>— Zeynep D. <em>★★★★★</em></span></div>
  </div>
 </div></section>
-<section class="ms" id="mesaj">
- <div class="lbl">İLETİŞİM</div><h2>Size nasıl destek olabiliriz?</h2>
- <p>Sizi dinlemek için buradayız. Size uygun konuyu seçin, dilerseniz yaşadıklarınızı kendi cümlelerinizle paylaşın. İstediğiniz kadarını yazmanız yeterli. Hazır olduğunuzda “Gönder”e dokunun; mesajınız WhatsApp’ta hazır gelir.</p>
- 
- <div class="kart">
-  <label for="mad">SİZE NASIL HİTAP EDELİM?</label>
-  <input id="mad" type="text" placeholder="Adınız ve soyadınız" autocomplete="name" maxlength="80">
-  <label for="mtur">NE KONUDA DESTEK ARIYORSUNUZ?</label>
-  <select id="mtur"><option>Aile içindeki iletişim</option><option>Eşimle olan ilişkim</option><option>Çocuğum ya da ergenimle ilgili endişelerim</option><option>Stres, kaygı ve duygusal yorgunluk</option><option>Kendimi tanımak ve gelişmek istiyorum</option><option>Hedeflerim ve hayatıma yön vermek</option><option>Henüz emin değilim, konuşmak istiyorum</option></select>
-  <label for="mmetin">DİLERSENİZ PAYLAŞIN</label>
-  <textarea id="mmetin" maxlength="1000" placeholder="İstediğiniz kadarını yazabilirsiniz. Neler yaşadığınızı ya da nasıl bir destek aradığınızı paylaşabilirsiniz."></textarea>
-  <div id="mhata" role="alert"></div>
-  <div class="bt">
-   <button type="button" class="btn" id="mwa"><svg class="i"><use href="#msg"/></svg>Gönder</button>
-  </div>
- </div>
-</section>
 </main>
 
 <main id="page-hakkimda"><div class="wrap pg">
@@ -716,7 +575,7 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
   <a class="logo" href="#anasayfa"><span class="mono" style="width:46px;height:46px;font-size:32px">SK</span><span class="brand"><b style="font-size:20px">SERDAR KAKIZ</b><small>PSİKOLOJİ AİLE DANIŞMANI</small></span></a>
   
   <div class="soc fs"><span class="fl">İletişim:</span>
-   <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#ig"/></svg></a>
+   <a href="https://www.instagram.com/opndigitall?vrfl=aW4xamZzMDh0cGJi&amp;utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><svg class="i"><use href="#ig"/></svg></a>
    <a href="https://youtube.com/@opncial?si=pbUAHxJXvrZGl8AV" target="_blank" rel="noopener" aria-label="YouTube"><svg class="i"><use href="#yt"/></svg></a>
    
    <a href="https://wa.me/905443913120?text=Merhaba%20sitenizden%20size%20ula%C5%9F%C4%B1yorum" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="i"><use href="#wa"/></svg></a>
@@ -730,7 +589,7 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
 <script>
 (function(){
  function route(){
-  var h=(location.hash||"#anasayfa").slice(1);
+  var h=(window.curH||location.hash||"#anasayfa").slice(1);
   var about=h==="hakkimda",kitap=h==="kitap-onerileri",yazar=h==="yazar",aile=h==="aile-iletisimi",tanim=h==="kendini-tanimak",danisma=h==="aile-danismanligi",gz=h==="duygusal-zeka",mn=h==="manevi-danismanlik",yk=h==="yasam-kocullugu",yeni=gz||mn||yk;
   document.body.classList.toggle("about",about);
   document.body.classList.toggle("kitap",kitap);
@@ -747,21 +606,17 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
   var el=document.getElementById(h);
   if(el){setTimeout(function(){el.scrollIntoView();},0);}else{window.scrollTo(0,0);}
  }
- window.addEventListener("hashchange",route);route();
-})();
-</script>
-<script>
-(function(){
- var d=document.documentElement,i;
- if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
- var hero=document.querySelectorAll(".hero .wrap > div:first-child,.hero .wrap > .alinti");
- var others=document.querySelectorAll(".svc a,.ab .ph,.ab .abt,.blog .bh,.post,.tst .wrap > div:first-child,.q,.kh img,.kh .in>div");
- for(i=0;i<hero.length;i++){hero[i].classList.add("rv");}
- for(i=0;i<others.length;i++){others[i].classList.add("rv");others[i].style.transitionDelay=((i%6)*0.1)+"s";}
- setTimeout(function(){for(var k=0;k<hero.length;k++){hero[k].classList.add("go");}},d.classList.contains("ns")?150:2500);
- if(!("IntersectionObserver" in window)){for(i=0;i<others.length;i++){others[i].classList.add("go");}return;}
- var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("go");io.unobserve(e.target);}});},{threshold:0.12});
- for(i=0;i<others.length;i++){io.observe(others[i]);}
+ window.addEventListener("hashchange",function(){window.curH=location.hash;route();});route();
+ /* Önizleme/iframe gibi ortamlarda adres çubuğu (#) güncellenmese de sayfalar açılsın */
+ document.addEventListener("click",function(e){
+  if(e.defaultPrevented||e.button||e.metaKey||e.ctrlKey||e.shiftKey)return;
+  var a=e.target&&e.target.closest?e.target.closest('a[href^="#"]'):null;
+  if(!a)return;
+  var h=a.getAttribute("href");if(!h||h==="#")return;
+  var before=location.hash;
+  window.curH=h;
+  setTimeout(function(){if(location.hash===before&&before!==h){try{history.pushState(null,"",h);}catch(x){}route();}},0);
+ });
 })();
 </script>
 <script>
@@ -771,9 +626,9 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
  function ac(){m.hidden=false;document.body.style.overflow="hidden";h.textContent="";setTimeout(function(){t.focus();},60);}
  function kapat(){m.hidden=true;document.body.style.overflow="";}
  var SM={"aile-iletisimi":"Aile içi iletişim konusunda destek almak istiyorum: ","kendini-tanimak":"Kendini tanımak konusunda destek almak istiyorum: ","duygusal-zeka":"Duygusal zeka ve ilişkiler konusunda destek almak istiyorum: ","manevi-danismanlik":"Manevi danışmanlık hakkında görüşmek istiyorum: ","yasam-kocullugu":"Yaşam koçluğu hakkında görüşmek istiyorum: ","aile-danismanligi":"Aile danışmanlığı için randevu almak istiyorum: ","yazar":"Hayat Yaşadıkça Güzel kitabı hakkında: ","hakkimda":"Sizinle tanışmak ve görüşmek istiyorum: ","kitap-onerileri":"Kitap önerileri hakkında yazmak istiyorum: ","kutuphane":"Kütüphanedeki kitaplar hakkında yazmak istiyorum: "};
-  function navMsg(){var h=(location.hash||"").slice(1);return SM[h]||"";}
+  function navMsg(){var h=(window.curH||location.hash||"").slice(1);return SM[h]||"";}
   function bilinen(v){for(var x in SM){if(SM[x]===v)return true;}if(/^\u201c[^\u201d]*\u201d kitabı hakkında: $/.test(v))return true;var l=document.querySelectorAll(".js-randevu[data-on]");for(var j=0;j<l.length;j++){if(l[j].getAttribute("data-on")===v)return true;}return false;}
-  document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest('.soc a[aria-label="WhatsApp"]'):null;if(!a)return;var ms=document.querySelectorAll("main"),b=null;for(var i=0;i<ms.length;i++){if(ms[i].offsetParent!==null){b=ms[i];break;}}var hh=(location.hash||"").slice(1);if(!b||b.id==="page-home"||!hh||hh==="anasayfa"){a.href="https://wa.me/905443913120?text=Merhaba%20sitenizden%20size%20ula%C5%9F%C4%B1yorum";return;}var h2=b.querySelector("h2")||b.querySelector("h1"),bs=h2?h2.textContent.trim():"";a.href="https://wa.me/905443913120?text="+encodeURIComponent(bs?"Merhaba, sitenizdeki \u201c"+bs+"\u201d sayfasından size ulaşıyorum.":"Merhaba sitenizden size ulaşıyorum");},true);
+  document.addEventListener("click",function(e){var a=e.target&&e.target.closest?e.target.closest('.soc a[aria-label="WhatsApp"]'):null;if(!a)return;var ms=document.querySelectorAll("main"),b=null;for(var i=0;i<ms.length;i++){if(ms[i].offsetParent!==null){b=ms[i];break;}}var hh=(window.curH||location.hash||"").slice(1);if(!b||b.id==="page-home"||!hh||hh==="anasayfa"){a.href="https://wa.me/905443913120?text=Merhaba%20sitenizden%20size%20ula%C5%9F%C4%B1yorum";return;}var h2=b.querySelector("h2")||b.querySelector("h1"),bs=h2?h2.textContent.trim():"";a.href="https://wa.me/905443913120?text="+encodeURIComponent(bs?"Merhaba, sitenizdeki \u201c"+bs+"\u201d sayfasından size ulaşıyorum.":"Merhaba sitenizden size ulaşıyorum");},true);
   var bs=document.querySelectorAll("#nav a.btn,.js-randevu");for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){e.preventDefault();var o=this.getAttribute("data-on")||"";if(this.matches("#nav a.btn")){o=navMsg();}var v=t.value;if(!v.trim()||bilinen(v)){t.value=o;}ac();});}
  document.getElementById("rkapat").addEventListener("click",kapat);
  m.addEventListener("click",function(e){if(e.target===m){kapat();}});
@@ -786,25 +641,6 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
   a.target="_blank";a.rel="noopener";
   document.body.appendChild(a);a.click();document.body.removeChild(a);
   t.value="";kapat();
- });
-})();
-</script>
-<script>
-(function(){
- var hata=document.getElementById("mhata");
- if(!hata)return;
- function veri(){
-  var ad=document.getElementById("mad").value.trim(),tur=document.getElementById("mtur").value,msj=document.getElementById("mmetin").value.trim();
-  if(!ad){hata.textContent="Adınızı yazar mısınız?";return null;}
-  hata.textContent="";return {ad:ad,tur:tur,msj:msj};
- }
- document.getElementById("mwa").addEventListener("click",function(){
-  var v=veri();if(!v)return;
-  var t="Ad Soyad: "+v.ad+"\n\nDestek almak istediğim konu: "+v.tur+(v.msj?"\n\nPaylaşmak istediklerim:\n"+v.msj:"");
-  var a=document.createElement("a");
-  a.href="https://wa.me/905443913120?text="+encodeURIComponent(t);
-  a.target="_blank";a.rel="noopener";
-  document.body.appendChild(a);a.click();document.body.removeChild(a);
  });
 })();
 </script>
@@ -838,6 +674,5 @@ body.duygusal #page-duygusal,body.manevi #page-manevi,body.kocluk #page-kocluk{d
 })();
 </script>
 
-<script>(function(){var s=document.querySelector("#page-yazar .kt img"),d=document.getElementById("kitapana");if(s&&d){d.src=s.src;}})();</script>
 </body>
 </html>
